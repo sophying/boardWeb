@@ -3,39 +3,32 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee https://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
 
-<!-- 스프링의 환경 설정 파일 로딩 -->
+	<!-- The definition of the Root Spring Container shared by all Servlets and Filters -->
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
 		<param-value>/WEB-INF/spring/root-context.xml</param-value>
 	</context-param>
 	
-<!-- 위 Context 설정하는데 필요한 리스너 WebApplicationContext 만듦-->
+	<!-- Creates the Spring Container shared by all Servlets and Filters -->
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
 
-<!-- 서블릿 환경 설정 -->
+	<!-- Processes application requests -->
 	<servlet>
 		<servlet-name>appServlet</servlet-name>
-		<!-- DispatcherServlet 이 최초 관문(or 징검다리) 같은 역할을 함 (내장된 서블릿 클래스) -->
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
-		<init-param> <!-- 초기화 파라미터 -->
+		<init-param>
 			<param-name>contextConfigLocation</param-name>
-			<!-- servlet-cointext.xml 파일에서 설정을 읽어 들여 객체 생성 -->
 			<param-value>/WEB-INF/spring/appServlet/servlet-context.xml</param-value>
 		</init-param>
-		<!--  시작할 때 첫번째 우선순위로 지정 -->
 		<load-on-startup>1</load-on-startup>
 	</servlet>
 		
 	<servlet-mapping>
 		<servlet-name>appServlet</servlet-name>
-		<!-- url 패턴을  /  로 정하면서 DispatcherServlet 이 모든 요청을 가로채게 됨 -->
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
-	
-
-
 	
 	<!-- 1. 한글 처리 위한 인코딩 filter -->
 	<filter>
@@ -45,10 +38,15 @@
 			<param-name>encoding</param-name>
 			<param-value>UTF-8</param-value>
 		</init-param>
+		<init-param>
+			<param-name>forceEncoding</param-name>
+			<param-value>true</param-value>
+		</init-param>
 	</filter>
 	<filter-mapping>
 		<filter-name>encoding</filter-name>
 		<url-pattern>/*</url-pattern>
 	</filter-mapping> 
+	
 
 </web-app>

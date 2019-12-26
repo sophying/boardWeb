@@ -25,7 +25,7 @@ public class BoardController {
 	public String boatdList(Model model) throws Exception{
 		
 		List<BoardDTO> list = boardService.boardList(); //list 변수에 결과 값 담음 
-		model.addAttribute("list",list); //model 에 데이터 값을 담음
+		model.addAttribute("list",list); //model 에 데이터 값을 담음 model 객체가 가지고 있는 메소드 addAttribute("key", "value")를 활용하기 위함 
 		return "board/board_list"; // board / board_list.jsp 로 이동
 	}
 	

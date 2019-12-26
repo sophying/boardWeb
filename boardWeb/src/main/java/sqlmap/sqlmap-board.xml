@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="boardDAO">
+
+	<!-- 1. 목록  -->
+	<select id="list" resultType="boardVO">
+		select * from S_BOARD_3
+		order by seq
+	</select>
+	
+	<!-- 2. 글쓰기  -->
+	<insert id="insert" parameterType="boardVO">
+		insert into S_BOARD_3
+		(seq, title, content, writer, password, regDate, cnt)
+		values
+		(S_BOARD_3_seq.nextval, #{title}, #{content}, #{writer}, #{password}, sysdate, 0)
+	</insert>
+	
+	<!-- 상세보기 -->
+	<select id="read" resultType="boardVO">
+		select  * from S_BOARD_3 where seq=#{seq}  
+	</select>
+	
+</mapper>

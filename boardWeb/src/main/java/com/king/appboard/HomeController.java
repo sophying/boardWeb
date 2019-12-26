@@ -1,4 +1,4 @@
-package com.board.example.controller;
+package com.king.appboard;
 
 import java.text.DateFormat;
 import java.util.Date;
@@ -22,7 +22,6 @@ public class HomeController {
 	/**
 	 * Simply selects the home view to render by returning its name.
 	 */
-	/* value 값을 보고 요청한 url 대응 여부 판단 후 맞다면 method 실행  */
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Locale locale, Model model) {
 		logger.info("Welcome home! The client locale is {}.", locale);

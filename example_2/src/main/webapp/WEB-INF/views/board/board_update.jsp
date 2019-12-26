@@ -26,7 +26,7 @@
 		</div>
 		<div>게시글 내용 : </div>
 		<div>
-			<textarea name=" content" rows="5" cols="50">${data.content }</textarea>
+			<textarea name="content" rows="5" cols="50">${data.content }</textarea>
 		</div>
 		<div>조회수</div>
 		<div>

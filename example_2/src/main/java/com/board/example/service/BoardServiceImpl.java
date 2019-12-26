@@ -32,7 +32,7 @@ public class BoardServiceImpl implements BoardService{
 	//3. 게시물 글 쓰기
 	@Override
 	public void writerBoard(BoardDTO bdto) throws Exception {
-		boardDao.writerBoard(bdto);
+		boardDao.writerBoard(bdto);  
 		
 	}
 

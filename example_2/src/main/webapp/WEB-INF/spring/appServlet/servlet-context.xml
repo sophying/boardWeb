@@ -43,6 +43,7 @@
 	<!-- 
 		스프링에서 관리하는 bean의 기본 디렉토리
 		컴포넌트 스캔  :  해당 패키지 하위에 있는 컴포넌트들을 검색해 bean 객체로 등록 함 
+		com.board.example 에 속한 하위 패키지 속 클래스 모두 스캔  ( @Component  / @Controller,  @Service ,  @Repository  )
 	 -->
 	<context:component-scan base-package="com.board.example" />
 	
