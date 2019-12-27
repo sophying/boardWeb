@@ -44,7 +44,7 @@
 		<div> 
 		<a href='<c:url value="/board/list"></c:url>'>글목록</a>
 		<a href='<c:url value="/board/edit/${boardList.seq }"></c:url>'>수정</a>
-		<a id="deleteBtn" href='<c:url value="/board/delete.do?seq=${boardList.seq }"></c:url>'>삭제</a>
+		<a href='<c:url value="/board/delete/${boardList.seq }"></c:url>'>삭제</a>
 			<!-- <button id="listBtn">글목록</button> -->
 			<!-- <button id="updateBtn" >수정</button>
 			<button id="deleteBtn" >삭제</button> -->

@@ -1,7 +1,6 @@
 package com.king.appboard.dao;
 
 import java.util.List;
-
 import com.king.appboard.domain.BoardVO;
 
 public interface BoardDAO {

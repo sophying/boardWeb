@@ -1,7 +1,6 @@
 package com.king.appboard.dao;
 
 import java.util.List;
-
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -28,7 +27,7 @@ public class BoardDAOImpl implements BoardDAO{
 	//2. 글쓰기 
 	@Override
 	public void insert(BoardVO boardVO) {
-		sqlSessionTemplate.insert("insert", boardVO);
+		sqlSessionTemplate.insert("insert", boardVO);  // sqlSessionTemplate.insert("sqlmapID", 전달될 값); 
 	}
 
 	//3. 상세보기 

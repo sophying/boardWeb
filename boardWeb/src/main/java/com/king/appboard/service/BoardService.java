@@ -1,7 +1,6 @@
 package com.king.appboard.service;
 
 import java.util.List;
-
 import com.king.appboard.domain.BoardVO;
 
 public interface BoardService {

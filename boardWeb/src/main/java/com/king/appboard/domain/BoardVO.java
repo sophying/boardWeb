@@ -1,7 +1,6 @@
 package com.king.appboard.domain;
 
 import java.sql.Timestamp;
-
 import org.apache.ibatis.type.Alias;
 import org.hibernate.validator.constraints.Length; //  String type 에만 작성가능 
 import org.hibernate.validator.constraints.NotEmpty;  //  String type 에만 작성가능 

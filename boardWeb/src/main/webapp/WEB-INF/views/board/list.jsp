@@ -6,6 +6,11 @@
 <head>
 <meta charset="UTF-8">
 <title>Board_List.jsp</title>
+<style type="text/css">
+	td{
+		width: 250px;
+	}
+</style>
 </head>
 <body>
 <table border="1">
