@@ -10,7 +10,7 @@
 </head>
 <body>
 <h2>내용 수정</h2>
-<form:form modelAttribute="boardList" method="post">
+<form:form modelAttribute="boardVO" method="post">
 	<table border="1">
 		<tr>
 			<th><form:label path="title">제목</form:label></th>
@@ -31,6 +31,12 @@
 			<td>
 				<form:input path="content"/> 
 				<form:errors path="content"></form:errors>
+			</td>
+		</tr>	
+		<tr>
+			<th><label for="password">비밀번호</label></th>
+			<td>
+				<input type="password" id="pwd" name="pwd" value="0"/>${msg } 
 			</td>
 		</tr>	
 	</table>

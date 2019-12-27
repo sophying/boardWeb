@@ -33,9 +33,28 @@ public class BoardDAOImpl implements BoardDAO{
 
 	//3. 상세보기 
 	@Override
-	public BoardVO read(int seq) {
-		return sqlSessionTemplate.selectOne("read", seq);
+	public BoardVO select(int seq) {
+		BoardVO boardVO = sqlSessionTemplate.selectOne("read", seq);
+		return boardVO;
 		
+	}
+
+	// 4. 조회수 
+	@Override
+	public int updateReadCount(int seq) {
+		return sqlSessionTemplate.update("updateCount", seq);
+	}
+
+	// 5. 수정내용 등록 
+	@Override
+	public int update(BoardVO boardVO) {
+		return sqlSessionTemplate.update("update",boardVO);
+	}
+
+	// 6. 삭제 
+	@Override
+	public void delete(int seq) {
+		 sqlSessionTemplate.delete("delete",seq);
 	}
 
 

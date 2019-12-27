@@ -19,7 +19,8 @@
 	<c:forEach var="board" items="${boardList }" varStatus="loop">
 		<tr>
 			<td>${board.seq }</td>
-			<td><a href="<c:url value="/board/read?seq=${board.seq }" />">${board.title }</a></td>
+		<%-- 	<td><a href="<c:url value="/board/read?seq=${board.seq }" />">${board.title }</a></td> --%>
+			<td><a href="<c:url value="/board/read/${board.seq }" />">${board.title }</a></td>
 			<td>${board.writer }</td>
 			<td>${board.regDate }</td>
 			<td>${board.cnt }</td>

@@ -12,12 +12,14 @@ public interface BoardService {
 	//2. write.jsp
 	public abstract void write(BoardVO boardVO);
 
+	//3. 상세보기  (수정할 때, 상세보기 )
 	public abstract BoardVO read(int seq);
-	
-//	public abstract int delete(BoardVO boardVO);
-	
-//	public abstract int edit(BoardVO boardVO);
 
-//	public abstract BoardVO read(int seq);
+	//4. 수정 
+	public abstract int edit(BoardVO boardVO);
+
+	//5. 삭제 
+	public abstract void delete(int seq);
+
 
 }

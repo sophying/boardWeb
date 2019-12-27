@@ -19,9 +19,30 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		(S_BOARD_3_seq.nextval, #{title}, #{content}, #{writer}, #{password}, sysdate, 0)
 	</insert>
 	
-	<!-- 상세보기 -->
-	<select id="read" resultType="boardVO">
+	<!-- 3. 상세보기 ( 하나의 테이블 ) -->
+	<select id="read" resultType="boardVO" parameterType="int">
 		select  * from S_BOARD_3 where seq=#{seq}  
 	</select>
+	
+	<!--  4. 조회수 -->
+	<update id="updateCount" parameterType="int">  <!-- 전달된 값의 타입 int  -->
+		update S_BOARD_3 set cnt = cnt +1
+		where seq = #{seq}
+	</update>
+	
+	<!--  5. 수정내용 등록  -->
+	<update id="update" parameterType="boardVO">
+		update S_BOARD_3 
+		set
+		TITLE=#{title}, CONTENT=#{content}, WRITER=#{writer}
+		where SEQ=#{seq}
+		and PASSWORD=#{password}
+	</update>
+	
+	<!--  6. 삭제 -->
+	<delete id="delete" parameterType="int">
+		delete from S_BOARD_3 
+		where seq=#{seq}
+	</delete>
 	
 </mapper>
