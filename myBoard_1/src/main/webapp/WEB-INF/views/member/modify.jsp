@@ -17,6 +17,12 @@
 		<label for="userPass">새로운 패스워드</label>
 		<input type="password" id="userPass" name="userPass"/>
 	</p>
+	<p>
+      <button type="submit">회원정보 수정</button>
+   </p>
+   <p>
+      <a href="/">처음으로</a>
+   </p>
 </form>
 </body>
 </html>

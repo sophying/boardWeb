@@ -5,21 +5,30 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <mapper namespace="com.king.myweb.mappers.memberMapper">
 	
-<!-- 회원가입 -->
+<!-- 1. 회원가입 -->
 	<insert id="register">
 		insert into myMember(userId, userPass, userName)
 		values(#{userId}, #{userPass}, #{userName})
 	</insert>
 	
-<!-- 로그인 -->
+<!-- 2. 로그인 -->
 	<select id="login" resultType="com.king.myweb.domain.MemberVO">
 		select userId, userName, userPass
 		from myMember
 		where userId= #{userId} and userPass= #{userPass}
 	</select>
 	
-<!-- 회원정보 수정 -->
+<!-- 3. 회원정보 수정 -->
+	<update id="modify">
+		update myMember
+		set userPass = #{userPass}
+		where userName = #{userName}
+	</update>
 	
-	
-	
+<!-- 4. 회원 탈퇴 -->	
+	<delete id="withdrawal">
+		delete from myMember
+		where userId = #{userId}
+		and userPass = #{userPass}
+	</delete>
 </mapper>
